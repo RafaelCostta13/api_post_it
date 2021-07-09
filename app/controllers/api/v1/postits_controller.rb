@@ -12,7 +12,7 @@ class Api::V1::PostitsController < ApplicationController
 
 	# GET /api/v1/postit/all_postits
 	def all_postits
-		@posts = Postit.all
+		@posts = Postit.order(id: :desc)
 		render json: @posts
 	end
 
